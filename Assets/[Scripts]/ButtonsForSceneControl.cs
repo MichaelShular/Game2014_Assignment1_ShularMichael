@@ -1,3 +1,19 @@
+///ButtonsForSceneControl 
+///Shular Michael, 101273089
+///Last Modified: 10/3/2021
+///
+///Summary: Hold all functions and code for controlling UI elements 
+///for all scenes 
+///
+///Version History
+///0.1: Added Scene mangement buttons fuction for start, main and level1
+///
+///0.2 Added TMPro to contol Text UI, add switch statement to control 
+///UI for instructions, buttons fuctions for level 2, level3 and instruction
+///
+///0.3 Added tempoary button function for lose scene, added button fuction
+///for pause menu
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,19 +30,6 @@ public class ButtonsForSceneControl : MonoBehaviour
     [SerializeField] TextMeshProUGUI info2;
     [SerializeField] TextMeshProUGUI info3;
     private float textCounter = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
     public void LoadStartScene()
     {
         SceneManager.LoadScene("Start");
@@ -35,7 +38,6 @@ public class ButtonsForSceneControl : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
-
     public void LoadLoseScene()
     {
         SceneManager.LoadScene("Lose Scene");
@@ -55,12 +57,10 @@ public class ButtonsForSceneControl : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Level3");
     }
-
     public void toggleInstructionMenu()
     {
         instructionsMenu.enabled = !instructionsMenu.enabled;
     }
-
     public void togglePauseMenu()
     {
         pauseMenu.enabled = !pauseMenu.enabled;
@@ -73,8 +73,6 @@ public class ButtonsForSceneControl : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-
-    
     public void switchTextInstructions()
     {
         textCounter++;
