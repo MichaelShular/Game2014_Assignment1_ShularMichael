@@ -2,10 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class ButtonsForSceneControl : MonoBehaviour
 {
-    
+    [SerializeField] Canvas instructionsMenu;
+    [SerializeField] TextMeshProUGUI info0;
+    [SerializeField] TextMeshProUGUI info1;
+    [SerializeField] TextMeshProUGUI info2;
+    [SerializeField] TextMeshProUGUI info3;
+    private float textCounter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +34,51 @@ public class ButtonsForSceneControl : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
-    public void LoadSceneTwo()
+    public void LoadLevel1()
     {
-        SceneManager.LoadScene("SceneTwo");
+        SceneManager.LoadScene("Level1");
+    }
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene("Level3");
     }
 
+    public void toggleInstructionMenu()
+    {
+        instructionsMenu.enabled = !instructionsMenu.enabled;
+    }
+
+    public void switchTextInstructions()
+    {
+        textCounter++;
+        if(textCounter > 3)
+        {
+            textCounter = 0;
+        }
+        switch (textCounter)
+        {
+            case 0:
+                info0.enabled = true;
+                info3.enabled = false;
+            break;
+            case 1:
+                info1.enabled = true;
+                info0.enabled = false;
+                break;
+            case 2:
+                info2.enabled = true;
+                info1.enabled = false;
+                break;
+            case 3:
+                info3.enabled = true;
+                info2.enabled = false;
+                break;
+            default:
+                break;
+        }
+    }
 }
