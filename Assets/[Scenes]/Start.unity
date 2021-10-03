@@ -1100,6 +1100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionsMenu: {fileID: 613045079}
+  pauseMenu: {fileID: 0}
   info0: {fileID: 503992159}
   info1: {fileID: 1860987758}
   info2: {fileID: 379381937}

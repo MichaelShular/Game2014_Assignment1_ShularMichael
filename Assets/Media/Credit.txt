@@ -2,10 +2,24 @@ Start Background
 Parallax Demon Woods Pack, Artwork created by David Marah
 
 UI buttons/panels
-Fantasy Wooden GUI, Artwork created by Black Hammer
+Fantasy Wooden GUI/ Artwork created by Black Hammer
 
 Level Select Background
-Free Pixel Art Forest,Artwork created by Eder Muniz
+Free Pixel Art Forest/ Artwork created by Eder Muniz
 
 Tile Map
-RPG Nature Tileset, Artwork created by Stealthix
+RPG Nature Tileset/ Artwork created by Stealthix
+
+Towers 
+Free NPC mage, Fire Totem (Free), NightBorne Warrior (Free)
+BloodMoon Tower (Free), Flying Obelisk, Obelisk Animation, 
+/ Artwork created by creativekind
+
+Enemies
+Slime Animations / Artwork created by Reff SQ
+
+Stars for level clear UI
+Cute Cartoon Mobile GUI/ Artwork created by HONETi
+
+UI for life left and score
+Pixel Cursors/ Artwork created by ClayManStudio

@@ -8,6 +8,7 @@ using TMPro;
 public class ButtonsForSceneControl : MonoBehaviour
 {
     [SerializeField] Canvas instructionsMenu;
+    [SerializeField] Canvas pauseMenu;
     [SerializeField] TextMeshProUGUI info0;
     [SerializeField] TextMeshProUGUI info1;
     [SerializeField] TextMeshProUGUI info2;
@@ -34,16 +35,24 @@ public class ButtonsForSceneControl : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+
+    public void LoadLoseScene()
+    {
+        SceneManager.LoadScene("Lose Scene");
+    }
     public void LoadLevel1()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level1");
     }
     public void LoadLevel2()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level2");
     }
     public void LoadLevel3()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Level3");
     }
 
@@ -52,6 +61,20 @@ public class ButtonsForSceneControl : MonoBehaviour
         instructionsMenu.enabled = !instructionsMenu.enabled;
     }
 
+    public void togglePauseMenu()
+    {
+        pauseMenu.enabled = !pauseMenu.enabled;
+        if (pauseMenu.enabled == false)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
+    }
+
+    
     public void switchTextInstructions()
     {
         textCounter++;
