@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    GameObject eventSystem;
+    GameObject enemyControl;
     [SerializeField] private Vector2[] target;
     private int targetCounter = 0;
     [SerializeField] private float tolerance = 0.05f;
     // Start is called before the first frame update
     void Start()
     {
-        eventSystem = GameObject.Find("EventSystem");
-        transform.position = eventSystem.GetComponent<WayPointControl>().getSpawn();
-        target = new Vector2[eventSystem.GetComponent<WayPointControl>().getAmountOfWayPoints()];
+        enemyControl = GameObject.Find("EnemyControl");
+        transform.position = enemyControl.GetComponent<WayPointControl>().getSpawn();
+        target = new Vector2[enemyControl.GetComponent<WayPointControl>().getAmountOfWayPoints()];
         for(int x = 0; x < target.Length; x++ )
         {
-            target[x] = eventSystem.GetComponent<WayPointControl>().getWayPoint(x);
+            target[x] = enemyControl.GetComponent<WayPointControl>().getWayPoint(x);
         }
         
     }
