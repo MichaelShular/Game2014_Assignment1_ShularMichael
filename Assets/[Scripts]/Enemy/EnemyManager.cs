@@ -44,7 +44,6 @@ public class EnemyManager : MonoBehaviour
         {
             var tempEnemy = enemyFactory.createEnemy(listOfEnemysForLevel[x]);
             m_EnemyPool.Enqueue(tempEnemy);
-
         }
     }
     public GameObject GetEnemy()
@@ -68,5 +67,9 @@ public class EnemyManager : MonoBehaviour
         {
             return false;
         }
+    }
+    public int getNumberOfEnemyInlevel()
+    {
+        return listOfEnemysForLevel.Length;
     }
 }

@@ -35,6 +35,7 @@ public class EnemyCollision : MonoBehaviour
     {
         if(collision.tag == "EnemyGoal")
         {
+            GameObject.Find("Player").GetComponent<PlayerController>().incrementNumberOfEnemysDefeated();
             int temp = playerController.getLives();
             temp--;
             playerController.setLives(temp);

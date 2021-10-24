@@ -68,7 +68,9 @@ public class TowerBulletsController : MonoBehaviour
     {
         if(collision.GetComponent<DefualtEnemyController>().getColor() == colorType)
         {
+
             float temphealth = collision.GetComponent<DefualtEnemyController>().getHealth() - 3;
+            Debug.Log(temphealth);
             collision.GetComponent<DefualtEnemyController>().setHealth(temphealth);
         }
         bulletManager.returnBullet(this.gameObject);

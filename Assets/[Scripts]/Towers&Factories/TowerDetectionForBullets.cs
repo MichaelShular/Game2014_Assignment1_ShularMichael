@@ -27,7 +27,7 @@ public class TowerDetectionForBullets : MonoBehaviour
             if(nextBulletToFireTime <= Time.time)
             {
                 nextBulletToFireTime = timeBetweenBulletFired + Time.time;
-                bulletManager.getBullet(transform.position, EnemyTypes.BLUE, target);
+                bulletManager.getBullet(transform.position, EnemyTypes.RED, target);
             }
         }
     }
