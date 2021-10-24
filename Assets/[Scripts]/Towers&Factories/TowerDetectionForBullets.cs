@@ -27,7 +27,6 @@ public class TowerDetectionForBullets : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         canFire = true;

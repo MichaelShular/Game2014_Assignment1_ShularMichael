@@ -18,22 +18,24 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyFactory : MonoBehaviour
 {
-    public GameObject redEnemy;
-    public GameObject blueEnemy;
-    public GameObject greenEnemy;
+    public GameObject slime;
+
     public GameObject createEnemy(EnemyTypes enemy)
     {
         GameObject tempEnemy = null;
         switch (enemy)
         {
             case EnemyTypes.BLUE:
-                tempEnemy = Instantiate(blueEnemy);
+                tempEnemy = Instantiate(slime);
+                tempEnemy.GetComponent<SpriteRenderer>().color = Color.blue; 
                 break;
             case EnemyTypes.GREEN:
-                tempEnemy = Instantiate(greenEnemy);
+                tempEnemy = Instantiate(slime);
+                tempEnemy.GetComponent<SpriteRenderer>().color = Color.green;
                 break;
             case EnemyTypes.RED:
-                tempEnemy = Instantiate(redEnemy);
+                tempEnemy = Instantiate(slime);
+                tempEnemy.GetComponent<SpriteRenderer>().color = Color.red;
                 break;
         }
         

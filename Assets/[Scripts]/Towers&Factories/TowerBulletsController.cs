@@ -14,21 +14,26 @@ using UnityEngine;
 
 public class TowerBulletsController : MonoBehaviour
 {
+    private BulletManager bulletManager;
     [SerializeField] float speed;
     [SerializeField] float damage;
     private EnemyTypes colorType = EnemyTypes.NONE;
-    private Vector2 target; 
+    private Vector2 target;
+    [SerializeField] private Bounds bulletBoundsX;
+    [SerializeField] private Bounds bulletBoundsY;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        bulletManager = GameObject.Find("TowerBulletManager").GetComponent<BulletManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         move();
+        checkBounds();
     }
 
     private void move()
@@ -37,6 +42,18 @@ public class TowerBulletsController : MonoBehaviour
         transform.position += new Vector3(speed, 0.0f, 0.0f) * Time.deltaTime;
     }
 
+    private void checkBounds()
+    {
+        if (transform.position.x < bulletBoundsX.min || transform.position.x > bulletBoundsX.max)
+        {
+            bulletManager.returnBullet(this.gameObject);
+        }
+        if (transform.position.y < bulletBoundsY.min || transform.position.y > bulletBoundsY.max)
+        {
+            bulletManager.returnBullet(this.gameObject);
+        }
+
+    }
     public void setTarget(Vector2 a)
     {
         target = a;

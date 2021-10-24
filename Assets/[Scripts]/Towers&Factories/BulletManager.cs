@@ -42,7 +42,7 @@ public class BulletManager : MonoBehaviour
         return tempBullet;
     }
 
-    public void returnEnemy(GameObject a)
+    public void returnBullet(GameObject a)
     {
         a.SetActive(false);
         bulletPool.Enqueue(a);
