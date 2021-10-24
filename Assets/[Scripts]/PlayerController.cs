@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
         uILives.text = numberOfLives.ToString();
             
         uICost.text = numberOfMaterials.ToString();
-        Debug.Log(uILives.text);
     }
     public int getLives()
     {
