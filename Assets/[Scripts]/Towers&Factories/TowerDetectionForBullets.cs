@@ -10,7 +10,7 @@ public class TowerDetectionForBullets : MonoBehaviour
     private float nextBulletToFireTime;
     private Transform target;
     private EnemyTypes enemiesColor;
-    private EnemyTypes TowerColor = EnemyTypes.RED;
+    private EnemyTypes TowerColor = EnemyTypes.NONE;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +22,14 @@ public class TowerDetectionForBullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TowerColor = this.GetComponentInParent<TowerController>().currentColorForTower;
+
         if (canFire && enemiesColor == TowerColor)
         {
             if(nextBulletToFireTime <= Time.time)
             {
                 nextBulletToFireTime = timeBetweenBulletFired + Time.time;
-                bulletManager.getBullet(transform.position, EnemyTypes.RED, target);
+                bulletManager.getBullet(transform.position, TowerColor, target);
             }
         }
     }

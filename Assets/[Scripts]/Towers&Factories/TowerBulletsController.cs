@@ -17,7 +17,7 @@ public class TowerBulletsController : MonoBehaviour
     private BulletManager bulletManager;
     [SerializeField] float speed;
     [SerializeField] float damage;
-    private EnemyTypes colorType = EnemyTypes.RED;
+    private EnemyTypes colorType = EnemyTypes.NONE;
     private Transform target;
     [SerializeField] private Bounds bulletBoundsX;
     [SerializeField] private Bounds bulletBoundsY;

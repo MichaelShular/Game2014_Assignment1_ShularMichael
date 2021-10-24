@@ -23,6 +23,7 @@ public class EnemyManager : MonoBehaviour
 {
     public EnemyFactory enemyFactory;
     [SerializeField] EnemyTypes[] listOfEnemysForLevel;
+    [SerializeField] Color[] listOfColorTypesForLevel;
     private Queue<GameObject> m_EnemyPool;
 
     // Start is called before the first frame update
@@ -71,5 +72,10 @@ public class EnemyManager : MonoBehaviour
     public int getNumberOfEnemyInlevel()
     {
         return listOfEnemysForLevel.Length;
+    }
+
+    public Color listOfColors(int a)
+    {
+        return listOfColorTypesForLevel[a];
     }
 }

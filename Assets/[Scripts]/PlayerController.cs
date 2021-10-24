@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int numberOfMaterials;
     private int numberOfEnemysInLevel;
     private int numberOfEnemysDefeated = 0;
+    public EnemyTypes choosenColor = EnemyTypes.NONE; 
+
 
     [SerializeField] private TextMeshProUGUI uILives;
     [SerializeField] private TextMeshProUGUI uICost;
