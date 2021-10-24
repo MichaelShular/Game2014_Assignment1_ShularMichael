@@ -1,6 +1,6 @@
 ///Towerbuttons
 ///101273089 Michael Shular
-///Last modified: 10/23/2021
+///Last modified: 10/24/2021
 ///
 ///Summary: This code is so when the player selects tower for menu they can 
 ///drag it out on to the game screen
@@ -24,6 +24,7 @@ public class TowerButtons : MonoBehaviour
     private Touch touch;
     [SerializeField] GameObject fireTower;
     private Vector3 m_touchesEnded;
+    GameObject tempTower;
     private enum towerTypes
     {
         FIRE, MATERIALFACTORY, NONE
@@ -39,20 +40,15 @@ public class TowerButtons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-
+        //Debug.Log(isTouchingButton);
         if (isTouchingButton)
         {
-            
+            Move();
             switch (currentTowerChoosen)
             {
                 case towerTypes.FIRE:
                     temporayMovingTower.position = m_touchesEnded;
-                    if (touch.phase == TouchPhase.Ended)
-                    {
-                        currentTowerChoosen = towerTypes.NONE;
-                        Debug.Log("end");
-                    }
+                   
                     break;
                 case towerTypes.MATERIALFACTORY:
                     break;
@@ -69,15 +65,9 @@ public class TowerButtons : MonoBehaviour
         currentTowerChoosen = towerTypes.FIRE;
         isTouchingButton = true;
         GameObject.Find("TowerButtons").GetComponent<Canvas>().enabled = false;
-        GameObject temp = Instantiate(fireTower);
+        tempTower = Instantiate(fireTower);
 
-        temporayMovingTower = temp.transform;
-
-        if (Input.touchCount > 0)
-        {    
-            touch = Input.GetTouch(0);
-            Debug.Log(touch.position);
-        }
+        temporayMovingTower = tempTower.transform;
     }
 
     private void Move()
@@ -87,6 +77,15 @@ public class TowerButtons : MonoBehaviour
             var worldTouch = new Vector3(Camera.main.ScreenToWorldPoint(touch.position).x, 
                 Camera.main.ScreenToWorldPoint(touch.position).y);
             m_touchesEnded = worldTouch;
+            if (touch.phase == TouchPhase.Ended)
+            {
+                currentTowerChoosen = towerTypes.NONE;
+                isTouchingButton = false;
+            }
         }
+    }
+    public bool isTowerBeingDragged()
+    {
+        return isTouchingButton;
     }
 }

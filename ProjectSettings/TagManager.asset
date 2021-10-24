@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - EnemyGoal
+  - Tower
+  - TowerChange
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - EnemyBullets
   - TowerBullets
   - EnemyGoal
-  - 
-  - 
+  - TileMap
+  - TowerPlaced
   - 
   - 
   - 
