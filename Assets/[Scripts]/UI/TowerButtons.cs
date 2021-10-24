@@ -23,11 +23,14 @@ public class TowerButtons : MonoBehaviour
     private Transform temporayMovingTower;
     private Touch touch;
     [SerializeField] GameObject fireTower;
+    [SerializeField] GameObject colorFactory;
+    [SerializeField] GameObject materialFactory;
+
     private Vector3 m_touchesEnded;
     GameObject tempTower;
     private enum towerTypes
     {
-        FIRE, MATERIALFACTORY, NONE
+        FIRE, MATERIALFACTORY, COLOR, NONE
     }
     private towerTypes currentTowerChoosen;
 
@@ -48,9 +51,12 @@ public class TowerButtons : MonoBehaviour
             {
                 case towerTypes.FIRE:
                     temporayMovingTower.position = m_touchesEnded;
-                   
                     break;
                 case towerTypes.MATERIALFACTORY:
+                    temporayMovingTower.position = m_touchesEnded;
+                    break;
+                case towerTypes.COLOR:
+                    temporayMovingTower.position = m_touchesEnded;
                     break;
                 case towerTypes.NONE:
                     break;
@@ -66,9 +72,27 @@ public class TowerButtons : MonoBehaviour
         isTouchingButton = true;
         GameObject.Find("TowerButtons").GetComponent<Canvas>().enabled = false;
         tempTower = Instantiate(fireTower);
-
         temporayMovingTower = tempTower.transform;
     }
+
+    public void createFacoryColor()
+    {
+        currentTowerChoosen = towerTypes.COLOR;
+        isTouchingButton = true;
+        GameObject.Find("TowerButtons").GetComponent<Canvas>().enabled = false;
+        tempTower = Instantiate(colorFactory);
+        temporayMovingTower = tempTower.transform;
+    }
+
+    public void createFactoryMaterial()
+    {
+        currentTowerChoosen = towerTypes.MATERIALFACTORY;
+        isTouchingButton = true;
+        GameObject.Find("TowerButtons").GetComponent<Canvas>().enabled = false;
+        tempTower = Instantiate(materialFactory);
+        temporayMovingTower = tempTower.transform;
+    }
+
 
     private void Move()
     {
@@ -82,6 +106,7 @@ public class TowerButtons : MonoBehaviour
                 currentTowerChoosen = towerTypes.NONE;
                 isTouchingButton = false;
             }
+
         }
     }
     public bool isTowerBeingDragged()
