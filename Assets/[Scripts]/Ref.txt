@@ -1,0 +1,7 @@
+touch phases used in towerbuttons script
+https://stackoverflow.com/questions/53979047/is-there-a-way-to-implement-a-touch-and-hold-in-unity
+
+holding button script
+https://answers.unity.com/questions/1544787/how-to-make-the-button-respond-to-touch-and-hold-f.html
+
+
