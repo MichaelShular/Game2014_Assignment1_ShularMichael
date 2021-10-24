@@ -36,8 +36,9 @@ public class EnemyFactory : MonoBehaviour
                 tempEnemy = Instantiate(redEnemy);
                 break;
         }
-        tempEnemy.SetActive(false);
+        
         tempEnemy.transform.parent = transform;
+        tempEnemy.SetActive(false);
         return tempEnemy;
     }
 }

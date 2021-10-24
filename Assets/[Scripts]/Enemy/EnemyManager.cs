@@ -11,6 +11,8 @@
 ///-_BuildBulletPool function creates the queue to hold the enemy passes the information of which enemy need to be created
 ///-GetEnemy function makes the enemy within the pool active 
 ///-ReturnEnemy fucntion returns the enemy to the queue and makes it not active
+///0.2
+///-isQueueEmpty returns is there is something in the pool 
 
 using System.Collections;
 using System.Collections.Generic;
@@ -55,5 +57,16 @@ public class EnemyManager : MonoBehaviour
     {
         returnedEnemy.SetActive(false);
         m_EnemyPool.Enqueue(returnedEnemy);
+    }
+    public bool isQueueEmpty()
+    {
+        if(m_EnemyPool.Count > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
