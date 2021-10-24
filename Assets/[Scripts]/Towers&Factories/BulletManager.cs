@@ -32,7 +32,7 @@ public class BulletManager : MonoBehaviour
         }
     }
 
-    public GameObject getBullet(Vector2 spawnLocation, EnemyTypes color, Vector2 target)
+    public GameObject getBullet(Vector2 spawnLocation, EnemyTypes color, Transform target)
     {
         var tempBullet = bulletPool.Dequeue();
         tempBullet.SetActive(true);

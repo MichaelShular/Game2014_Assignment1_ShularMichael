@@ -17,8 +17,8 @@ public class TowerBulletsController : MonoBehaviour
     private BulletManager bulletManager;
     [SerializeField] float speed;
     [SerializeField] float damage;
-    private EnemyTypes colorType = EnemyTypes.NONE;
-    private Vector2 target;
+    private EnemyTypes colorType = EnemyTypes.RED;
+    private Transform target;
     [SerializeField] private Bounds bulletBoundsX;
     [SerializeField] private Bounds bulletBoundsY;
 
@@ -38,8 +38,8 @@ public class TowerBulletsController : MonoBehaviour
 
     private void move()
     {
-        //transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        transform.position += new Vector3(speed, 0.0f, 0.0f) * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        //transform.position += new Vector3(speed, 0.0f, 0.0f) * Time.deltaTime;
     }
 
     private void checkBounds()
@@ -54,7 +54,7 @@ public class TowerBulletsController : MonoBehaviour
         }
 
     }
-    public void setTarget(Vector2 a)
+    public void setTarget(Transform a)
     {
         target = a;
     }
@@ -62,5 +62,15 @@ public class TowerBulletsController : MonoBehaviour
     public void setColor(EnemyTypes a)
     {
         colorType = a;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.GetComponent<DefualtEnemyController>().getColor() == colorType)
+        {
+            float temphealth = collision.GetComponent<DefualtEnemyController>().getHealth() - 3;
+            collision.GetComponent<DefualtEnemyController>().setHealth(temphealth);
+        }
+        bulletManager.returnBullet(this.gameObject);
     }
 }

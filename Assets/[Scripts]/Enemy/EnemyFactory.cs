@@ -27,15 +27,25 @@ public class EnemyFactory : MonoBehaviour
         {
             case EnemyTypes.BLUE:
                 tempEnemy = Instantiate(slime);
-                tempEnemy.GetComponent<SpriteRenderer>().color = Color.blue; 
+                tempEnemy.GetComponent<SpriteRenderer>().color = Color.blue;
+                tempEnemy.GetComponent<DefualtEnemyController>().setHealth(9);
+                tempEnemy.GetComponent<DefualtEnemyController>().setColor(EnemyTypes.BLUE);
                 break;
             case EnemyTypes.GREEN:
                 tempEnemy = Instantiate(slime);
                 tempEnemy.GetComponent<SpriteRenderer>().color = Color.green;
+                tempEnemy.GetComponent<DefualtEnemyController>().setHealth(9);
+                tempEnemy.GetComponent<DefualtEnemyController>().setColor(EnemyTypes.GREEN);
+
+
                 break;
             case EnemyTypes.RED:
                 tempEnemy = Instantiate(slime);
                 tempEnemy.GetComponent<SpriteRenderer>().color = Color.red;
+                tempEnemy.GetComponent<DefualtEnemyController>().setHealth(9);
+                tempEnemy.GetComponent<DefualtEnemyController>().setColor(EnemyTypes.RED);
+
+
                 break;
         }
         
