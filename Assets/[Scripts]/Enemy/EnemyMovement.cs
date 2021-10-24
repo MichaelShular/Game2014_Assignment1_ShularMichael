@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target[targetCounter], 1 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target[targetCounter], 2 * Time.deltaTime);
         if( Vector2.Distance(transform.position, target[targetCounter]) < tolerance)
         {
             targetCounter++;
