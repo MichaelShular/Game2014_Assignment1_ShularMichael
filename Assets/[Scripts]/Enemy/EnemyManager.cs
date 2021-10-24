@@ -1,8 +1,20 @@
+///EnemyManager
+///101273089 Michael Shular
+///Last modified: 10/23/2021
+///
+///Summary: Class is used to manage the what type of enemies will spawn and hold
+///them in a queue when the object are not active
+///
+///Revision History:
+///0.1
+///-listOfEnemysForLevel variable will manage the enemies for each level from within the unity inspector
+///-_BuildBulletPool function creates the queue to hold the enemy passes the information of which enemy need to be created
+///-GetEnemy function makes the enemy within the pool active 
+///-ReturnEnemy fucntion returns the enemy to the queue and makes it not active
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-/// Using manager from class as example
 
 [System.Serializable]
 public class EnemyManager : MonoBehaviour

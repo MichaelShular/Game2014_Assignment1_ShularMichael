@@ -1,3 +1,17 @@
+///EnemyMovement
+///101273089 Michael Shular
+///Last modified: 10/23/2021
+///
+///Summary: This class manages the movement of the a enemy base of waypoints in the scene
+///
+///Revision History:
+///0.1
+///-the start fuction set up where the each way point for the enemy is
+///-the update function move to the waypoint base off where the targetCounter is at 
+///and the if statement increases targetCounter if the current target was reached 
+
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
