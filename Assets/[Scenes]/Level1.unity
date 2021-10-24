@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 60740139}
   - component: {fileID: 60740138}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Star3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60740136}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 111072690}
   - component: {fileID: 111072689}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Star2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111072687}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4476,7 +4476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyFactory: {fileID: 656630381}
-  listOfEnemysForLevel: 0000000001000000020000000200000000000000
+  listOfEnemysForLevel: 0000000000000000000000000000000000000000
   listOfColorTypesForLevel:
   - {r: 1, g: 0, b: 0, a: 3e-45}
   - {r: 0, g: 0.10866976, b: 1, a: 4.1432635e-11}
@@ -4523,7 +4523,7 @@ GameObject:
   - component: {fileID: 661383965}
   - component: {fileID: 661383964}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4555,7 +4555,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661383962}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5452,10 +5452,15 @@ MonoBehaviour:
   numberOfLives: 5
   numberOfMaterials: 10
   choosenColor: 3
+  levelName: 
+  starCount: 0
   uILives: {fileID: 139536842}
   uICost: {fileID: 1351820524}
   uIGameResult: {fileID: 1096254723}
   gameStateCanves: {fileID: 1594498332}
+  star: {fileID: 661383964}
+  star2: {fileID: 111072689}
+  star3: {fileID: 60740138}
 --- !u!1 &1089711338
 GameObject:
   m_ObjectHideFlags: 0

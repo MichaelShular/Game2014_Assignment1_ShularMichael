@@ -14,24 +14,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private int numberOfLives;
+    private int maxLives;
     [SerializeField] private int numberOfMaterials;
     private int numberOfEnemysInLevel;
     private int numberOfEnemysDefeated = 0;
-    public EnemyTypes choosenColor = EnemyTypes.NONE; 
-
-
+    public EnemyTypes choosenColor = EnemyTypes.NONE;
+    private string levelSavingResults;
+    [SerializeField]private string levelName;
+    public int starCount;
     [SerializeField] private TextMeshProUGUI uILives;
     [SerializeField] private TextMeshProUGUI uICost;
     [SerializeField] private TextMeshProUGUI uIGameResult;
     [SerializeField] private Canvas gameStateCanves;
+    [SerializeField] private Image star;
+    [SerializeField] private Image star2;
+    [SerializeField] private Image star3;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        maxLives = numberOfLives;
         numberOfEnemysInLevel = GameObject.Find("EnemyControl").GetComponent<EnemyManager>().getNumberOfEnemyInlevel();
     }
 
@@ -45,14 +53,18 @@ public class PlayerController : MonoBehaviour
         if(numberOfEnemysInLevel == numberOfEnemysDefeated)
         {
             Time.timeScale = 0;
-           gameStateCanves.enabled = true;
-           uIGameResult.text = "Level Complete";
+            gameStateCanves.enabled = true;
+            calculateStars();
+            levelSavingResults = starCount.ToString();
+            PlayerPrefs.SetString(levelName, levelSavingResults);
+            uIGameResult.text = "Level Complete";
         }
 
         if(numberOfLives <= 0)
         {
             Time.timeScale = 0;
             gameStateCanves.enabled = true;
+            PlayerPrefs.SetString(levelName, "0");
             uIGameResult.text = "Level Failed";
         }
     }
@@ -77,4 +89,28 @@ public class PlayerController : MonoBehaviour
     {
         numberOfEnemysDefeated++;
     }
+    public void calculateStars()
+    {
+        if(maxLives == numberOfLives)
+        {
+            star.enabled = star2.enabled = star3.enabled = true;
+            starCount = 3;
+            return;
+        }
+        if(maxLives / 2 < numberOfLives)
+        {
+            star.enabled = star2.enabled = true;
+            starCount = 2;
+            return;
+        }
+        if (maxLives / 2 > numberOfLives)
+        {
+            star.enabled = true;
+            starCount = 3;
+            return;
+        }
+    }
+
+
+
 }
