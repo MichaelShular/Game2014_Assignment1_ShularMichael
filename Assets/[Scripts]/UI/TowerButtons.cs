@@ -1,3 +1,16 @@
+///Towerbuttons
+///101273089 Michael Shular
+///Last modified: 10/23/2021
+///
+///Summary: This code is so when the player selects tower for menu they can 
+///drag it out on to the game screen
+///
+///Revision History:
+///0.1
+///-tower is created and moves during drag
+///-need to expend to multiple tower
+///-need to add to only grass
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
