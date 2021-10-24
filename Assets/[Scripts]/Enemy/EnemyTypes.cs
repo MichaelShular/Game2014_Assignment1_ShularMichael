@@ -8,8 +8,6 @@
 ///0.1
 ///-just added test enums
 
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,5 +17,6 @@ public enum EnemyTypes
 {
    RED,
    BLUE,
-   GREEN    
+   GREEN,
+   NONE
 }
