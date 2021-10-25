@@ -40,7 +40,11 @@ public class ButtonsForSceneControl : MonoBehaviour
     }
     public void LoadLoseScene()
     {
-        SceneManager.LoadScene("Lose Scene");
+        if (PlayerPrefs.GetInt("Level1") > 0)
+        {
+            SceneManager.LoadScene("Lose Scene");
+        }
+        Debug.Log(PlayerPrefs.GetInt("Level1"));
     }
     public void LoadLevel1()
     {
@@ -50,12 +54,19 @@ public class ButtonsForSceneControl : MonoBehaviour
     public void LoadLevel2()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Level2");
+        if (PlayerPrefs.GetInt("Level1") > 0)
+        {
+            SceneManager.LoadScene("Level2");
+        }
     }
     public void LoadLevel3()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Level3");
+        if (PlayerPrefs.GetInt("Level2") > 0)
+        {
+            SceneManager.LoadScene("Level3");
+        }
+
     }
     public void toggleInstructionMenu()
     {

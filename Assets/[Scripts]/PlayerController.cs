@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private int numberOfEnemysInLevel;
     private int numberOfEnemysDefeated = 0;
     public EnemyTypes choosenColor = EnemyTypes.NONE;
-    private string levelSavingResults;
+    //private string levelSavingResults;
     [SerializeField]private string levelName;
     public int starCount;
     [SerializeField] private TextMeshProUGUI uILives;
@@ -56,15 +56,14 @@ public class PlayerController : MonoBehaviour
             {
                 Time.timeScale = 0;
                 gameStateCanves.enabled = true;
-                PlayerPrefs.SetString(levelName, "0");
+                PlayerPrefs.SetInt(levelName, starCount);
                 uIGameResult.text = "Level Failed";
                 return;
             }
             Time.timeScale = 0;
             gameStateCanves.enabled = true;
             calculateStars();
-            levelSavingResults = starCount.ToString();
-            PlayerPrefs.SetString(levelName, levelSavingResults);
+            PlayerPrefs.SetInt(levelName, starCount);
             uIGameResult.text = "Level Complete";
         }
 
@@ -102,13 +101,13 @@ public class PlayerController : MonoBehaviour
         if(maxLives / 2 < numberOfLives)
         {
             star.enabled = star2.enabled = true;
-            starCount = 2;
+            starCount = 1;
             return;
         }
-        if (maxLives / 2 > numberOfLives)
+        if (maxLives / 2 >= numberOfLives)
         {
             star.enabled = true;
-            starCount = 3;
+            starCount = 2;
             return;
         }
     }

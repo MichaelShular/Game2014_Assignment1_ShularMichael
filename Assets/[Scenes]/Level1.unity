@@ -5466,7 +5466,7 @@ MonoBehaviour:
   numberOfLives: 5
   numberOfMaterials: 10
   choosenColor: 3
-  levelName: 
+  levelName: Level1
   starCount: 0
   uILives: {fileID: 139536842}
   uICost: {fileID: 1351820524}
