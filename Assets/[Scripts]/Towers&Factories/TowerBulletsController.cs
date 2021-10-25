@@ -61,6 +61,22 @@ public class TowerBulletsController : MonoBehaviour
 
     public void setColor(EnemyTypes a)
     {
+        switch (a)
+        {
+            case EnemyTypes.RED:
+                this.GetComponent<SpriteRenderer>().color = new Color32(0, 0, 0, 255) + GameObject.Find("EnemyControl").GetComponent<EnemyManager>().listOfColors(0);
+                break;
+            case EnemyTypes.BLUE:
+                this.GetComponent<SpriteRenderer>().color = new Color32(0, 0, 0, 255) + GameObject.Find("EnemyControl").GetComponent<EnemyManager>().listOfColors(1);
+                break;
+            case EnemyTypes.GREEN:
+                this.GetComponent<SpriteRenderer>().color = new Color32(0, 0, 0, 255) + GameObject.Find("EnemyControl").GetComponent<EnemyManager>().listOfColors(2);
+                break;
+            case EnemyTypes.NONE:
+                break;
+            default:
+                break;
+        }
         colorType = a;
     }
 
