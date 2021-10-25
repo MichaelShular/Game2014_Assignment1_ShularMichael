@@ -1,3 +1,13 @@
+///ColorSelectionScript
+///101273089 Michael Shular
+///Last modified: 10/24/2021
+///
+///Summary: just changes the ui color and moves color selection buttons to color factory
+///
+///Revision History:
+///0.1
+///-float max and min
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

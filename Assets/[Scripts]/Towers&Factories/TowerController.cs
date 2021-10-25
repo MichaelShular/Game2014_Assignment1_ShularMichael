@@ -1,3 +1,13 @@
+///TowerController
+///101273089 Michael Shular
+///Last modified: 10/24/2021
+///
+///Summary: a class use to control parts of a tower. Mainly used to control and apply color to current tower 
+///
+///Revision History:
+///0.1
+///-apply and save color 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

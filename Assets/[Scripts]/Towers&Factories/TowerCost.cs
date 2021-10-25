@@ -1,3 +1,13 @@
+///TowerCost
+///101273089 Michael Shular
+///Last modified: 10/24/2021
+///
+///Summary: Just hold the cost to build for all towers
+///
+///Revision History:
+///0.1
+///-returns a tower build cost
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

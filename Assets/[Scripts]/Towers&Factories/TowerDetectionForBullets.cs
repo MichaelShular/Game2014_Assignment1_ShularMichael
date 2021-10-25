@@ -1,3 +1,13 @@
+///TowerDetectionForBullets
+///101273089 Michael Shular
+///Last modified: 10/24/2021
+///
+///Summary: check if bullet can be fired for tower and damage enemy
+///
+///Revision History:
+///0.1
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

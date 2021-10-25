@@ -1,3 +1,13 @@
+///ColorButtonScript
+///101273089 Michael Shular
+///Last modified: 10/24/2021
+///
+///Summary: allow button so reset offscreen and their current saved color (inspector)
+///
+///Revision History:
+///0.1
+///-
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
