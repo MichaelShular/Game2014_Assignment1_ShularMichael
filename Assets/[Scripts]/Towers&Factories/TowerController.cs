@@ -5,7 +5,7 @@ using UnityEngine;
 public class TowerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public EnemyTypes currentColorForTower; 
+    public EnemyTypes currentColorForTower;
     void Start()
     {
         
@@ -21,7 +21,6 @@ public class TowerController : MonoBehaviour
     {
         currentColorForTower = GameObject.Find("Player").GetComponent<PlayerController>().choosenColor;
         GameObject.Find("Player").GetComponent<PlayerController>().choosenColor = EnemyTypes.NONE;
-
         Time.timeScale = 1;
     }
 }

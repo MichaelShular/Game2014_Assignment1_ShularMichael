@@ -52,6 +52,14 @@ public class PlayerController : MonoBehaviour
         
         if(numberOfEnemysInLevel == numberOfEnemysDefeated)
         {
+            if(numberOfLives <= 0)
+            {
+                Time.timeScale = 0;
+                gameStateCanves.enabled = true;
+                PlayerPrefs.SetString(levelName, "0");
+                uIGameResult.text = "Level Failed";
+                return;
+            }
             Time.timeScale = 0;
             gameStateCanves.enabled = true;
             calculateStars();
@@ -60,13 +68,7 @@ public class PlayerController : MonoBehaviour
             uIGameResult.text = "Level Complete";
         }
 
-        if(numberOfLives <= 0)
-        {
-            Time.timeScale = 0;
-            gameStateCanves.enabled = true;
-            PlayerPrefs.SetString(levelName, "0");
-            uIGameResult.text = "Level Failed";
-        }
+        
     }
     public int getLives()
     {

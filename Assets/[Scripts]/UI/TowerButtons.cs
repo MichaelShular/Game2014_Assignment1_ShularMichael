@@ -56,6 +56,7 @@ public class TowerButtons : MonoBehaviour
                     temporayMovingTower.position = m_touchesEnded;
                     break;
                 case towerTypes.COLOR:
+
                     temporayMovingTower.position = m_touchesEnded;
                     break;
                 case towerTypes.NONE:
@@ -68,6 +69,12 @@ public class TowerButtons : MonoBehaviour
 
     public void createTowerFire()
     {
+        int tempCost =  GameObject.Find("Player").GetComponent<PlayerController>().getNumberOfMaterials() - GameObject.Find("Towers").GetComponent<TowerCost>().getTowerCost(0);
+        if (tempCost < 0)
+        {
+            return;
+        }
+        GameObject.Find("Player").GetComponent<PlayerController>().setNumberOfMaterials(tempCost);
         currentTowerChoosen = towerTypes.FIRE;
         isTouchingButton = true;
         GameObject.Find("TowerButtons").GetComponent<Canvas>().enabled = false;
@@ -77,6 +84,12 @@ public class TowerButtons : MonoBehaviour
 
     public void createFacoryColor()
     {
+        int tempCost = GameObject.Find("Player").GetComponent<PlayerController>().getNumberOfMaterials() - GameObject.Find("Towers").GetComponent<TowerCost>().getTowerCost(2) ;
+        if (tempCost < 0)
+        {
+            return;
+        }
+        GameObject.Find("Player").GetComponent<PlayerController>().setNumberOfMaterials(tempCost);
         currentTowerChoosen = towerTypes.COLOR;
         isTouchingButton = true;
         GameObject.Find("TowerButtons").GetComponent<Canvas>().enabled = false;
@@ -86,6 +99,12 @@ public class TowerButtons : MonoBehaviour
 
     public void createFactoryMaterial()
     {
+        int tempCost = GameObject.Find("Player").GetComponent<PlayerController>().getNumberOfMaterials() - GameObject.Find("Towers").GetComponent<TowerCost>().getTowerCost(1);
+        if (tempCost < 0)
+        {
+            return;
+        }
+        GameObject.Find("Player").GetComponent<PlayerController>().setNumberOfMaterials(tempCost);
         currentTowerChoosen = towerTypes.MATERIALFACTORY;
         isTouchingButton = true;
         GameObject.Find("TowerButtons").GetComponent<Canvas>().enabled = false;
