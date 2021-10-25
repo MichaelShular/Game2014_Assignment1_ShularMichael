@@ -1,3 +1,13 @@
+///StarsForEachLevel
+///101273089 Michael Shular
+///Last modified: 10/24/2021
+///
+///Summary: A use to control the stars images that will appear on the main scene
+///
+///Revision History:
+///0.1
+///-for loop for each level to check saved data of star gotten
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,13 @@
+///BulletManager
+///101273089 Michael Shular
+///Last modified: 10/24/2021
+///
+///Summary: used to control the bullet to and from a queue 
+///
+///Revision History:
+///0.1
+///-build pool, dequeue bullet, return bullet
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
