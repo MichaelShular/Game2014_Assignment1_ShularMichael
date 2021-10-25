@@ -49,17 +49,17 @@ public class PlayerController : MonoBehaviour
         uILives.text = numberOfLives.ToString();
             
         uICost.text = numberOfMaterials.ToString();
-        
-        if(numberOfEnemysInLevel == numberOfEnemysDefeated)
+        if(numberOfLives <= 0)
         {
-            if(numberOfLives <= 0)
-            {
                 Time.timeScale = 0;
                 gameStateCanves.enabled = true;
                 PlayerPrefs.SetInt(levelName, starCount);
                 uIGameResult.text = "Level Failed";
                 return;
-            }
+        }
+        if(numberOfEnemysInLevel == numberOfEnemysDefeated)
+        {
+            
             Time.timeScale = 0;
             gameStateCanves.enabled = true;
             calculateStars();

@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &116057895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -510,14 +510,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Select Factory Color: Double click a placed factory and choose from available
-    colors.
-
-
-
-
-
-'
+  m_text: "To select a color for turrent\nclick on a factory and you'll be prompted
+    \nto pick a color.\nAfter which press the turrent. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -809,8 +803,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tower Placement: Drag and drop towers from menu panel, on to a grass tile.
-    \n\n\n\n\n\n"
+  m_text: "How to play \nSelect a turrent/factory from the \npop-up menu\nto help
+    protect your lives\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1555,8 +1549,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Connecting Tower and Factory: Press and hold a factory, then drag finger
-    to nearby tower.  \n\n\n\n\n"
+  m_text: 'Notes
+
+    Building costs material which
+
+    recover over time.
+
+    Also
+    towers/factories cannot be
+
+    placed on the pathway'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2236,12 +2238,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tower Removal: Double click a placed tower once then confirm removal.
+  m_text: 'To place turrent/factory down
 
+    Hold the button down
 
-
-
-
+    and  drag
+    your finger to location
 
 '
   m_isRightToLeft: 0
